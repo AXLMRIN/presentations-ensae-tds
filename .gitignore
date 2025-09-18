@@ -1,6 +1,7 @@
 _extensions
 *_files/
 *.qmd
+*.html
 .DS_Store
 _images/
 /.quarto/
