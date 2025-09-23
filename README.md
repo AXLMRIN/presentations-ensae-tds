@@ -21,11 +21,68 @@ Git est uniquement local (propre à la machine). Sert à versionner son code à 
 
 2 étapes :
 
-- Stage (En ligne de code : `git add filename`; sur VSCode: icone 3 points reliés sur la gauche, cliquer sur "+", [voir présentation slide 6](./presentations/seance_2-25_09_23.pdf))
-- Commit (`git commit -m "MESSAGE"`; sur VSCode: icone 3 points reliés sur la gauche, ajouter un message et cliquer sur "✔ Commit", [voir présentation slide 6](./presentations/seance_2-25_09_23.pdf))
+- Stage (En ligne de code : `git add filename`; sur VSCode: onglet Source control [^1], cliquer sur "+", [voir présentation slide 6](./presentations/seance_2-25_09_23.pdf))
+- Commit (`git commit -m "MESSAGE"`; sur VSCode: onglet Source control [^2], ajouter un message et cliquer sur "✔ Commit", [voir présentation slide 6](./presentations/seance_2-25_09_23.pdf))
 
-:::{.callout-note title="Succès}
+🎉 Votre fichier est versionné 🎉
 
-djezbfej
+### Ignorer des fichiers
 
-:::
+Tout n'est pas bon à garder, vous pouvez ajouter un fichier `.gitignore` pour spécifier les fichiers à ignorer.
+
+Ex :
+
+```
+fichier/specifique.py
+dossier/
+*.html # Tous les fichiers html
+```
+
+### Commandes additionnelles et astuces
+
+- Voir vos derniers changements:
+  - ligne de commange : `git log`, permet de voir l'identifiant du commit (SHA), l'auteur, la date et le message associé.
+  - VSCode : dans l'onglet Source control, il y a un onglet "repositories"
+- Annuler un comit
+  - en gardant les modifications
+    - en ligne de commande : `git reset --soft $SHA` (remplacer `$SHA` par l'identifiant du commit) ou bien `git reset --soft HEAD^` pour revenir un commit en arrière.
+    - Dans VS code : dans la section Source control, dans l'onglet "repositories" puis "commits" il y a la liste de tous les commits. Il suffit d'appuyer sur le logo retour &#8634; [voir présentation slide 10](./presentations/seance_2-25_09_23.pdf)
+  - sans garder les modifications (🚨DANGER🚨):
+    - en ligne de commande : `git reset --hard $SHA` (remplacer `$SHA` par l'identifiant du commit) ou bien `git reset --hard HEAD^` pour revenir un commit en arrière.
+
+## Github
+
+Plateforme en ligne de partage de projets Git.
+
+- Créer un dépot : [voir présentation slide 14](./presentations/seance_2-25_09_23.pdf)
+- Cloner un dépot sur sa machine : [voir présentation slide 15](./presentations/seance_2-25_09_23.pdf)
+
+Une fois qu'un dépot est copié sur votre machine :
+
+- Pour téléverser (upload) ses modifications (celles qui ont été commit): `git push`
+- Pour télécharger (download) les modifiications d'autres contributeur.ices : `git pull` (si message d'erreur : `git pull --rebase`).
+
+### Comment travailler avec des branches?
+
+Les branches permettent de travailler de manière indépendantes. Pour les utiliser il faut :
+
+- Créer une branche : `git checkout -b user/nom-branche` ou `git branch user/nom-branche` puis `git checkout user/nom-branche`.
+- Publier la branche sur Github : `git push --set-upstream origin user/nom-branche`
+- Travailler dessus en enregistrant des commits
+- Une fois le travail terminé, pour joindre les modifications au projet il faut :
+  - Retourner sur la branche `main` : `git checkout main`
+  - Récupérer les possibles modifications apportées entre temps : `git pull`
+  - Si modifications il y a eu des modifications, la bonne pratique est de reporter ces modifications dans sa branche :
+    - retourner dans sa branche : `git checkout user/nom-branche`
+    - Joindre les modifications téléchargées : `git merge main`
+    - Régler les possibles conflits
+    - S'assurer que la branche est stable, nos fonctions font bien ce qu'on leur demande.
+    - Une fois qu'on est satisfait, on peut retourner sur la branche `main` : `git checkout main`
+  - Joindre les modifications de notre branche à la branche `main` : `git merge user/nom-branche`
+  - _Aucun conflit ne devrai apparaître puisqu'ils ont du être réglés en amont_
+  - Téléverser la branche `main` : `git push`
+
+Autre méthode proposées depuis Github : [voir présentation slide 20](./presentations/seance_2-25_09_23.pdf)
+
+[^1]: icone 3 points reliés sur la gauche
+[^2]: icone 3 points reliés sur la gauche
