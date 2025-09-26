@@ -12,6 +12,11 @@ Here you'll find all the presentations for the "Python for data science" seminar
 
 # Créer une session onyxia
 
+Pour ouvrir une session onyxia :
+
+- À partir du [site de Lino Galiana](https://pythonds.linogaliana.fr): trouver le notebooks de votre choix, appuyer sur la pillule "SSP Cloud | Lancer avec VSCode"
+- À partir d'[Onyxia](https://datalab.sspcloud.fr), se connecter puis se rendre dans la section "Mes services", appuyer sur "Nouveau service", sélectionner "Vscode-python", cliquer sur "Lancer" puis "Lancer". Vous êtes redirigés vers la page "Mes services". Attendre que le service est déployé, puis clique sur "Ouvrir", "Cliquer pour copier le mot de pass..." et enfin "Ouvrir le service 🚀" et finalement, coller le mot de passe.
+
 # Git et Github
 
 ## Git
