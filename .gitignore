@@ -5,3 +5,4 @@ _extensions
 .DS_Store
 _images/
 /.quarto/
+*.csv
