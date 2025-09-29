@@ -9,6 +9,7 @@ Here you'll find all the presentations for the "Python for data science" seminar
   - [Correction des exercices Numpy](./corrections/seance_1-25-09-18-numpy.ipynb)
 - [Session 2 (23rd Sept 2025)](./presentations/seance_2-25_09_23.pdf)
   - [Correction pandas intro](./corrections/seance_2-26-09-23-pandas-intro.ipynb)
+  - [Correction pandas intro](./corrections/seance_2-26-09-23-pandas-suite.ipynb)
 
 # Créer une session onyxia
 
